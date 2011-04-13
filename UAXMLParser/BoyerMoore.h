@@ -27,10 +27,7 @@ namespace xml {
 		~BoyerMoore();
 		
 		virtual size_t Search(const char* h, size_t hs, long* r, size_t rs, unsigned char options);
-		virtual size_t StreamSearch(const char* h, size_t hs, long* r, size_t rs);
-		
-		void ResetStream();
-		
+
 	private:
 		size_t _bcs[256];
 		char* _n;
