@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		488A580F1355AF3100D4C561 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488A580E1355AF3100D4C561 /* Foundation.framework */; };
+		488A581A1355AF3100D4C561 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488A58191355AF3100D4C561 /* UIKit.framework */; };
+		488A581B1355AF3100D4C561 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488A580E1355AF3100D4C561 /* Foundation.framework */; };
+		488A581D1355AF3100D4C561 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488A581C1355AF3100D4C561 /* CoreGraphics.framework */; };
+		488A58201355AF3100D4C561 /* libUAXMLParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 488A580B1355AF3100D4C561 /* libUAXMLParser.a */; };
+		488A58261355AF3100D4C561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 488A58241355AF3100D4C561 /* InfoPlist.strings */; };
+		488A58291355AF3100D4C561 /* UAXMLParserTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 488A58281355AF3100D4C561 /* UAXMLParserTests.h */; };
+		488A582B1355AF3100D4C561 /* UAXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 488A582A1355AF3100D4C561 /* UAXMLParserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488A581E1355AF3100D4C561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488A58021355AF3100D4C561 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488A580A1355AF3100D4C561;
+			remoteInfo = UAXMLParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		488A580B1355AF3100D4C561 /* libUAXMLParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUAXMLParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		488A580E1355AF3100D4C561 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		488A58121355AF3100D4C561 /* UAXMLParser-Prefix.pch */ = {isa = PBXFileReference; path = "UAXMLParser-Prefix.pch"; sourceTree = "<group>"; };
+		488A58181355AF3100D4C561 /* UAXMLParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAXMLParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		488A58191355AF3100D4C561 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		488A581C1355AF3100D4C561 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		488A58231355AF3100D4C561 /* UAXMLParserTests-Info.plist */ = {isa = PBXFileReference; path = "UAXMLParserTests-Info.plist"; sourceTree = "<group>"; };
+		488A58251355AF3100D4C561 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		488A58271355AF3100D4C561 /* UAXMLParserTests-Prefix.pch */ = {isa = PBXFileReference; path = "UAXMLParserTests-Prefix.pch"; sourceTree = "<group>"; };
+		488A58281355AF3100D4C561 /* UAXMLParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAXMLParserTests.h; sourceTree = "<group>"; };
+		488A582A1355AF3100D4C561 /* UAXMLParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UAXMLParserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		488A58081355AF3100D4C561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488A580F1355AF3100D4C561 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488A58141355AF3100D4C561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488A581A1355AF3100D4C561 /* UIKit.framework in Frameworks */,
+				488A581B1355AF3100D4C561 /* Foundation.framework in Frameworks */,
+				488A581D1355AF3100D4C561 /* CoreGraphics.framework in Frameworks */,
+				488A58201355AF3100D4C561 /* libUAXMLParser.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		488A58001355AF3100D4C561 = {
+			isa = PBXGroup;
+			children = (
+				488A58101355AF3100D4C561 /* UAXMLParser */,
+				488A58211355AF3100D4C561 /* UAXMLParserTests */,
+				488A580D1355AF3100D4C561 /* Frameworks */,
+				488A580C1355AF3100D4C561 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		488A580C1355AF3100D4C561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				488A580B1355AF3100D4C561 /* libUAXMLParser.a */,
+				488A58181355AF3100D4C561 /* UAXMLParserTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		488A580D1355AF3100D4C561 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				488A580E1355AF3100D4C561 /* Foundation.framework */,
+				488A58191355AF3100D4C561 /* UIKit.framework */,
+				488A581C1355AF3100D4C561 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		488A58101355AF3100D4C561 /* UAXMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				488A58111355AF3100D4C561 /* Supporting Files */,
+			);
+			path = UAXMLParser;
+			sourceTree = "<group>";
+		};
+		488A58111355AF3100D4C561 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				488A58121355AF3100D4C561 /* UAXMLParser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		488A58211355AF3100D4C561 /* UAXMLParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				488A58281355AF3100D4C561 /* UAXMLParserTests.h */,
+				488A582A1355AF3100D4C561 /* UAXMLParserTests.m */,
+				488A58221355AF3100D4C561 /* Supporting Files */,
+			);
+			path = UAXMLParserTests;
+			sourceTree = "<group>";
+		};
+		488A58221355AF3100D4C561 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				488A58231355AF3100D4C561 /* UAXMLParserTests-Info.plist */,
+				488A58241355AF3100D4C561 /* InfoPlist.strings */,
+				488A58271355AF3100D4C561 /* UAXMLParserTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		488A58091355AF3100D4C561 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		488A580A1355AF3100D4C561 /* UAXMLParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488A582E1355AF3100D4C561 /* Build configuration list for PBXNativeTarget "UAXMLParser" */;
+			buildPhases = (
+				488A58071355AF3100D4C561 /* Sources */,
+				488A58081355AF3100D4C561 /* Frameworks */,
+				488A58091355AF3100D4C561 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UAXMLParser;
+			productName = UAXMLParser;
+			productReference = 488A580B1355AF3100D4C561 /* libUAXMLParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		488A58171355AF3100D4C561 /* UAXMLParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488A58311355AF3100D4C561 /* Build configuration list for PBXNativeTarget "UAXMLParserTests" */;
+			buildPhases = (
+				488A58131355AF3100D4C561 /* Sources */,
+				488A58141355AF3100D4C561 /* Frameworks */,
+				488A58151355AF3100D4C561 /* Resources */,
+				488A58161355AF3100D4C561 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488A581F1355AF3100D4C561 /* PBXTargetDependency */,
+			);
+			name = UAXMLParserTests;
+			productName = UAXMLParserTests;
+			productReference = 488A58181355AF3100D4C561 /* UAXMLParserTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		488A58021355AF3100D4C561 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 488A58051355AF3100D4C561 /* Build configuration list for PBXProject "UAXMLParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 488A58001355AF3100D4C561;
+			productRefGroup = 488A580C1355AF3100D4C561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				488A580A1355AF3100D4C561 /* UAXMLParser */,
+				488A58171355AF3100D4C561 /* UAXMLParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		488A58151355AF3100D4C561 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488A58261355AF3100D4C561 /* InfoPlist.strings in Resources */,
+				488A58291355AF3100D4C561 /* UAXMLParserTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		488A58161355AF3100D4C561 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		488A58071355AF3100D4C561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488A58131355AF3100D4C561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488A582B1355AF3100D4C561 /* UAXMLParserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		488A581F1355AF3100D4C561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488A580A1355AF3100D4C561 /* UAXMLParser */;
+			targetProxy = 488A581E1355AF3100D4C561 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		488A58241355AF3100D4C561 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				488A58251355AF3100D4C561 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		488A582C1355AF3100D4C561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		488A582D1355AF3100D4C561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		488A582F1355AF3100D4C561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/UAXMLParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UAXMLParser/UAXMLParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		488A58301355AF3100D4C561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/UAXMLParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UAXMLParser/UAXMLParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		488A58321355AF3100D4C561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UAXMLParserTests/UAXMLParserTests-Prefix.pch";
+				INFOPLIST_FILE = "UAXMLParserTests/UAXMLParserTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		488A58331355AF3100D4C561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UAXMLParserTests/UAXMLParserTests-Prefix.pch";
+				INFOPLIST_FILE = "UAXMLParserTests/UAXMLParserTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		488A58051355AF3100D4C561 /* Build configuration list for PBXProject "UAXMLParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488A582C1355AF3100D4C561 /* Debug */,
+				488A582D1355AF3100D4C561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488A582E1355AF3100D4C561 /* Build configuration list for PBXNativeTarget "UAXMLParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488A582F1355AF3100D4C561 /* Debug */,
+				488A58301355AF3100D4C561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		488A58311355AF3100D4C561 /* Build configuration list for PBXNativeTarget "UAXMLParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488A58321355AF3100D4C561 /* Debug */,
+				488A58331355AF3100D4C561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 488A58021355AF3100D4C561 /* Project object */;
+}
