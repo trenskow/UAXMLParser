@@ -15,16 +15,17 @@
 		488A58261355AF3100D4C561 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 488A58241355AF3100D4C561 /* InfoPlist.strings */; };
 		488A58291355AF3100D4C561 /* UAXMLParserTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 488A58281355AF3100D4C561 /* UAXMLParserTests.h */; };
 		488A582B1355AF3100D4C561 /* UAXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 488A582A1355AF3100D4C561 /* UAXMLParserTests.m */; };
-		488A583C1355AF5A00D4C561 /* UAXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 488A58341355AF5A00D4C561 /* UAXMLNode.h */; };
-		488A583D1355AF5A00D4C561 /* UAXMLNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 488A58351355AF5A00D4C561 /* UAXMLNode.mm */; };
-		488A583E1355AF5A00D4C561 /* UAXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 488A58361355AF5A00D4C561 /* UAXMLParser.h */; };
-		488A583F1355AF5A00D4C561 /* UAXMLParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 488A58371355AF5A00D4C561 /* UAXMLParser.mm */; };
-		488A58401355AF5A00D4C561 /* XMLNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 488A58381355AF5A00D4C561 /* XMLNode.cpp */; };
-		488A58411355AF5A00D4C561 /* XMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 488A58391355AF5A00D4C561 /* XMLNode.h */; };
-		488A58421355AF5A00D4C561 /* XMLNodeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 488A583A1355AF5A00D4C561 /* XMLNodeList.cpp */; };
-		488A58431355AF5A00D4C561 /* XMLNodeList.h in Headers */ = {isa = PBXBuildFile; fileRef = 488A583B1355AF5A00D4C561 /* XMLNodeList.h */; };
-		488A58461355AF7500D4C561 /* BoyerMoore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 488A58441355AF7500D4C561 /* BoyerMoore.cpp */; };
-		488A58471355AF7500D4C561 /* BoyerMoore.h in Headers */ = {isa = PBXBuildFile; fileRef = 488A58451355AF7500D4C561 /* BoyerMoore.h */; };
+		48A7DFAF1355B161002FDB7F /* UAXMLParser-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFAE1355B161002FDB7F /* UAXMLParser-Prefix.pch */; };
+		48A7DFBA1355B18A002FDB7F /* BoyerMoore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB01355B18A002FDB7F /* BoyerMoore.cpp */; };
+		48A7DFBB1355B18A002FDB7F /* BoyerMoore.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB11355B18A002FDB7F /* BoyerMoore.h */; };
+		48A7DFBC1355B18A002FDB7F /* UAXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB21355B18A002FDB7F /* UAXMLNode.h */; };
+		48A7DFBD1355B18A002FDB7F /* UAXMLNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB31355B18A002FDB7F /* UAXMLNode.mm */; };
+		48A7DFBE1355B18A002FDB7F /* UAXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB41355B18A002FDB7F /* UAXMLParser.h */; };
+		48A7DFBF1355B18A002FDB7F /* UAXMLParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB51355B18A002FDB7F /* UAXMLParser.mm */; };
+		48A7DFC01355B18A002FDB7F /* XMLNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB61355B18A002FDB7F /* XMLNode.cpp */; };
+		48A7DFC11355B18A002FDB7F /* XMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB71355B18A002FDB7F /* XMLNode.h */; };
+		48A7DFC21355B18A002FDB7F /* XMLNodeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB81355B18A002FDB7F /* XMLNodeList.cpp */; };
+		48A7DFC31355B18A002FDB7F /* XMLNodeList.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB91355B18A002FDB7F /* XMLNodeList.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 /* Begin PBXFileReference section */
 		488A580B1355AF3100D4C561 /* libUAXMLParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUAXMLParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		488A580E1355AF3100D4C561 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		488A58121355AF3100D4C561 /* UAXMLParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UAXMLParser-Prefix.pch"; sourceTree = "<group>"; };
 		488A58181355AF3100D4C561 /* UAXMLParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAXMLParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488A58191355AF3100D4C561 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		488A581C1355AF3100D4C561 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,16 +49,18 @@
 		488A58271355AF3100D4C561 /* UAXMLParserTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UAXMLParserTests-Prefix.pch"; sourceTree = "<group>"; };
 		488A58281355AF3100D4C561 /* UAXMLParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAXMLParserTests.h; sourceTree = "<group>"; };
 		488A582A1355AF3100D4C561 /* UAXMLParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UAXMLParserTests.m; sourceTree = "<group>"; };
-		488A58341355AF5A00D4C561 /* UAXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAXMLNode.h; sourceTree = "<group>"; };
-		488A58351355AF5A00D4C561 /* UAXMLNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UAXMLNode.mm; sourceTree = "<group>"; };
-		488A58361355AF5A00D4C561 /* UAXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAXMLParser.h; sourceTree = "<group>"; };
-		488A58371355AF5A00D4C561 /* UAXMLParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UAXMLParser.mm; sourceTree = "<group>"; };
-		488A58381355AF5A00D4C561 /* XMLNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLNode.cpp; sourceTree = "<group>"; };
-		488A58391355AF5A00D4C561 /* XMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNode.h; sourceTree = "<group>"; };
-		488A583A1355AF5A00D4C561 /* XMLNodeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLNodeList.cpp; sourceTree = "<group>"; };
-		488A583B1355AF5A00D4C561 /* XMLNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNodeList.h; sourceTree = "<group>"; };
-		488A58441355AF7500D4C561 /* BoyerMoore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoyerMoore.cpp; sourceTree = "<group>"; };
-		488A58451355AF7500D4C561 /* BoyerMoore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyerMoore.h; sourceTree = "<group>"; };
+		48A7DFAE1355B161002FDB7F /* UAXMLParser-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UAXMLParser-Prefix.pch"; path = "UAXMLParser/UAXMLParser-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		48A7DFB01355B18A002FDB7F /* BoyerMoore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoyerMoore.cpp; sourceTree = "<group>"; };
+		48A7DFB11355B18A002FDB7F /* BoyerMoore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoyerMoore.h; sourceTree = "<group>"; };
+		48A7DFB21355B18A002FDB7F /* UAXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAXMLNode.h; sourceTree = "<group>"; };
+		48A7DFB31355B18A002FDB7F /* UAXMLNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UAXMLNode.mm; sourceTree = "<group>"; };
+		48A7DFB41355B18A002FDB7F /* UAXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UAXMLParser.h; path = UAXMLParser/UAXMLParser.h; sourceTree = SOURCE_ROOT; };
+		48A7DFB51355B18A002FDB7F /* UAXMLParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UAXMLParser.mm; sourceTree = "<group>"; };
+		48A7DFB61355B18A002FDB7F /* XMLNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLNode.cpp; sourceTree = "<group>"; };
+		48A7DFB71355B18A002FDB7F /* XMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNode.h; sourceTree = "<group>"; };
+		48A7DFB81355B18A002FDB7F /* XMLNodeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLNodeList.cpp; sourceTree = "<group>"; };
+		48A7DFB91355B18A002FDB7F /* XMLNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNodeList.h; sourceTree = "<group>"; };
+		48FCC1D9135997CC00F90366 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,17 +118,18 @@
 		488A58101355AF3100D4C561 /* UAXMLParser */ = {
 			isa = PBXGroup;
 			children = (
-				488A58441355AF7500D4C561 /* BoyerMoore.cpp */,
-				488A58451355AF7500D4C561 /* BoyerMoore.h */,
-				488A58341355AF5A00D4C561 /* UAXMLNode.h */,
-				488A58351355AF5A00D4C561 /* UAXMLNode.mm */,
-				488A58361355AF5A00D4C561 /* UAXMLParser.h */,
-				488A58371355AF5A00D4C561 /* UAXMLParser.mm */,
-				488A58381355AF5A00D4C561 /* XMLNode.cpp */,
-				488A58391355AF5A00D4C561 /* XMLNode.h */,
-				488A583A1355AF5A00D4C561 /* XMLNodeList.cpp */,
-				488A583B1355AF5A00D4C561 /* XMLNodeList.h */,
+				48A7DFB01355B18A002FDB7F /* BoyerMoore.cpp */,
+				48A7DFB11355B18A002FDB7F /* BoyerMoore.h */,
+				48A7DFB21355B18A002FDB7F /* UAXMLNode.h */,
+				48A7DFB31355B18A002FDB7F /* UAXMLNode.mm */,
+				48A7DFB41355B18A002FDB7F /* UAXMLParser.h */,
+				48A7DFB51355B18A002FDB7F /* UAXMLParser.mm */,
+				48A7DFB61355B18A002FDB7F /* XMLNode.cpp */,
+				48A7DFB71355B18A002FDB7F /* XMLNode.h */,
+				48A7DFB81355B18A002FDB7F /* XMLNodeList.cpp */,
+				48A7DFB91355B18A002FDB7F /* XMLNodeList.h */,
 				488A58111355AF3100D4C561 /* Supporting Files */,
+				48FCC1D9135997CC00F90366 /* LICENSE */,
 			);
 			path = UAXMLParser;
 			sourceTree = "<group>";
@@ -134,7 +137,7 @@
 		488A58111355AF3100D4C561 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				488A58121355AF3100D4C561 /* UAXMLParser-Prefix.pch */,
+				48A7DFAE1355B161002FDB7F /* UAXMLParser-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,11 +169,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488A583C1355AF5A00D4C561 /* UAXMLNode.h in Headers */,
-				488A583E1355AF5A00D4C561 /* UAXMLParser.h in Headers */,
-				488A58411355AF5A00D4C561 /* XMLNode.h in Headers */,
-				488A58431355AF5A00D4C561 /* XMLNodeList.h in Headers */,
-				488A58471355AF7500D4C561 /* BoyerMoore.h in Headers */,
+				48A7DFAF1355B161002FDB7F /* UAXMLParser-Prefix.pch in Headers */,
+				48A7DFBB1355B18A002FDB7F /* BoyerMoore.h in Headers */,
+				48A7DFBC1355B18A002FDB7F /* UAXMLNode.h in Headers */,
+				48A7DFBE1355B18A002FDB7F /* UAXMLParser.h in Headers */,
+				48A7DFC11355B18A002FDB7F /* XMLNode.h in Headers */,
+				48A7DFC31355B18A002FDB7F /* XMLNodeList.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,11 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488A583D1355AF5A00D4C561 /* UAXMLNode.mm in Sources */,
-				488A583F1355AF5A00D4C561 /* UAXMLParser.mm in Sources */,
-				488A58401355AF5A00D4C561 /* XMLNode.cpp in Sources */,
-				488A58421355AF5A00D4C561 /* XMLNodeList.cpp in Sources */,
-				488A58461355AF7500D4C561 /* BoyerMoore.cpp in Sources */,
+				48A7DFBA1355B18A002FDB7F /* BoyerMoore.cpp in Sources */,
+				48A7DFBD1355B18A002FDB7F /* UAXMLNode.mm in Sources */,
+				48A7DFBF1355B18A002FDB7F /* UAXMLParser.mm in Sources */,
+				48A7DFC01355B18A002FDB7F /* XMLNode.cpp in Sources */,
+				48A7DFC21355B18A002FDB7F /* XMLNodeList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +423,7 @@
 				488A58301355AF3100D4C561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		488A58311355AF3100D4C561 /* Build configuration list for PBXNativeTarget "UAXMLParserTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +432,7 @@
 				488A58331355AF3100D4C561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
