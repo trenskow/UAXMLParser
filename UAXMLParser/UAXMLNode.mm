@@ -101,4 +101,13 @@
     
 }
 
+- (BOOL)isEqual:(id)object {
+    
+    if ([object isKindOfClass:[UAXMLNode class]])
+        return (node == ((UAXMLNode*)object)->node);
+    
+    return [super isEqual:object];
+    
+}
+
 @end
