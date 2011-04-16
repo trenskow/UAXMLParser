@@ -38,11 +38,13 @@
     UAXMLNode* currentNode;
     NSURL* url;
     BOOL ignoreChildNodes;
+    BOOL automaticallyPopsDelegatesOffStack;
     
 }
 #endif
 @property (readonly) UAXMLNode* currentNode;
 @property (readonly) NSURL* url;
+@property (assign) BOOL automaticallyPopsDelegatesOffStack;
 
 - (id)initWithContentOfURL:(NSURL*)contentUrl;
 

@@ -16,7 +16,7 @@
 
 @implementation UAXMLParser
 
-@synthesize currentNode, url;
+@synthesize currentNode, url, automaticallyPopsDelegatesOffStack;
 
 - (id)initWithContentOfURL:(NSURL *)contentUrl {
     
@@ -32,6 +32,7 @@
             [data release];
             
             delegates = [[NSMutableArray alloc] init];
+            automaticallyPopsDelegatesOffStack = YES;
             
         } else
             return nil;
@@ -61,9 +62,14 @@
         if (delegate && [(id)delegate conformsToProtocol:@protocol(UAXMLParserDelegate)])
             [delegate parser:self didBeginNode:currentNode];
         
+        BOOL pop = (automaticallyPopsDelegatesOffStack && [delegates lastObject] != delegate);
+        
         if (!ignoreChildNodes)
             [self internalParseNode:node->ChildNodes()->NodeAtIndex(i)];
         ignoreChildNodes = NO;
+        
+        if (pop)
+            [self popDelegate:[delegates lastObject]];
         
         delegate = [delegates lastObject];
         if (delegate && [(id)delegate conformsToProtocol:@protocol(UAXMLParserDelegate)] && [(id)delegate respondsToSelector:@selector(parser:didEndNode:)])

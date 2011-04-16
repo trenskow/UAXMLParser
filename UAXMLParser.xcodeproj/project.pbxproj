@@ -61,6 +61,7 @@
 		48A7DFB81355B18A002FDB7F /* XMLNodeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLNodeList.cpp; sourceTree = "<group>"; };
 		48A7DFB91355B18A002FDB7F /* XMLNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNodeList.h; sourceTree = "<group>"; };
 		48FCC1D9135997CC00F90366 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		48FCC1F31359B2C800F90366 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +131,7 @@
 				48A7DFB91355B18A002FDB7F /* XMLNodeList.h */,
 				488A58111355AF3100D4C561 /* Supporting Files */,
 				48FCC1D9135997CC00F90366 /* LICENSE */,
+				48FCC1F31359B2C800F90366 /* README */,
 			);
 			path = UAXMLParser;
 			sourceTree = "<group>";
