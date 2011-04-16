@@ -1,10 +1,11 @@
 /*
- *  Utils.h
- *  nntptest
- *
- *  Created by Kristian Trenskow on 12/18/09.
- *  Copyright 2009 __MyCompanyName__. All rights reserved.
- *
+ 
+ Created by Kristian Trenskow (The Famous Software Company)
+ 
+ This source code is licensed under the BSD-License (simplified variant).
+ Please see LICENSE for more info, or contact info@thefamoussoftwarecompany.com
+ if you obtained this source without a LICENSE file.
+ 
  */
 
 #ifndef __BOYERMOORE_H

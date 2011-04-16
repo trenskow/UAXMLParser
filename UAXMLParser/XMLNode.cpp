@@ -1,10 +1,11 @@
 /*
- *  XMLNode.cpp
- *  nntptest
- *
- *  Created by Kristian Trenskow on 6/16/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
+ 
+ Created by Kristian Trenskow (The Famous Software Company)
+ 
+ This source code is licensed under the BSD-License (simplified variant).
+ Please see LICENSE for more info, or contact info@thefamoussoftwarecompany.com
+ if you obtained this source without a LICENSE file.
+ 
  */
 
 #include <string>

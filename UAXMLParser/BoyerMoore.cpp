@@ -1,3 +1,13 @@
+/*
+ 
+ Created by Kristian Trenskow (The Famous Software Company)
+ 
+ This source code is licensed under the BSD-License (simplified variant).
+ Please see LICENSE for more info, or contact info@thefamoussoftwarecompany.com
+ if you obtained this source without a LICENSE file.
+
+ */
+
 #include <string.h>
 #include <assert.h>
 #include <math.h>
