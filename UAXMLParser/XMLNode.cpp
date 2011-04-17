@@ -28,7 +28,7 @@ XMLNode::XMLNode() {
 
 	_parentNode = NULL;
     _childNodes = NULL;
-	_nodeName = _nodeNamespace = _buffer = NULL;
+	_nodeName = _buffer = NULL;
 	_subNodesCache = NULL;
 	_attributesCacheCount = _subNodesCacheCount = _length = 0;
 
@@ -47,7 +47,7 @@ XMLNode::XMLNode(char* buffer, size_t length, XMLNode* parentNode) {
 	_parentNode = parentNode;
     _childNodes = NULL;
 
-	_nodeName = _nodeNamespace = NULL;
+	_nodeName = NULL;
 	_subNodesCache = NULL;
 	_attributesCacheCount = _subNodesCacheCount = 0;
 	
@@ -125,16 +125,6 @@ XMLNode* XMLNode::ParentNode() {
 	return _parentNode;
 
 }
-
-/* Disabled namespace code
-const char* XMLNode::GetNamespace() {
-	
-	_parseNodeName();
-	
-	return _nodeNamespace;
-	
-}
- */
 
 const char* XMLNode::GetName() {
 
@@ -396,7 +386,6 @@ XMLNode& XMLNode::operator=(const XMLNode &rs) {
 	
 	this->_innerValue = mallocstrcpy(rs._innerValue);
 	this->_nodeName = mallocstrcpy(rs._nodeName);
-	this->_nodeNamespace = mallocstrcpy(rs._nodeNamespace);
 
 	this->_subNodesCache = NULL;
 	this->_attributesCache = NULL;
@@ -571,29 +560,7 @@ void XMLNode::_parseNodeName() {
         _nodeName = (char*)malloc(sizeof(char) * len + 1);
         memcpy(_nodeName, start, len);
         _nodeName[len] = '\0';
-        
-        /* Disabled namespacing code
-         
-		_nodeNamespace = (char*)malloc(sizeof(char) * len + 1);
-		memcpy(_nodeNamespace, start, len);
-		_nodeNamespace[len] = '\0';
-		
-		for (int i = 0 ; i < strlen(_nodeNamespace) ; i++)
-			if (_nodeNamespace[i] == ':') { // Split into namespace and node name;
-				_nodeNamespace[i] = '\0';
-				_nodeName = (char*) malloc(sizeof(char) * (strlen(&_nodeNamespace[1]) + 1));
-				strcpy(_nodeName, &_nodeNamespace[i + 1]);
-				return;
-			}
-		
-		// No namespace seperator found - Namespace is node name
-		
-		_nodeName = _nodeNamespace;
-		_nodeNamespace = (char*) malloc(sizeof(char) * 1);
-		_nodeNamespace[0] = '\0';
-		
-         */
-         
+                 
 	}
 	
 }

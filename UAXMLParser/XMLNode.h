@@ -30,7 +30,6 @@ namespace xml {
 		XMLNode* ParentNode();
 
 		const char* GetName();
-//		const char* GetNamespace();
 		
         XMLNodeList* ChildNodes();
 		XMLNodeList* GetNodesWithTagName(const char* name);
@@ -53,7 +52,6 @@ namespace xml {
 		
 		XMLNode* _parentNode;
 		char* _nodeName;
-		char* _nodeNamespace;
         
         XMLNodeList* _childNodes;
 
