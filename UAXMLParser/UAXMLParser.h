@@ -33,6 +33,7 @@
 #ifdef __UAXMLPARSER_PRIVATE
 {
     
+    UAXMLNode* wrapperDocumentNode;
     xml::XMLNode* documentNode;
     NSMutableArray* delegates;
     UAXMLNode* currentNode;
@@ -45,6 +46,7 @@
 @property (readonly) UAXMLNode* currentNode;
 @property (readonly) NSURL* url;
 @property (assign) BOOL automaticallyPopsDelegatesOffStack;
+@property (readonly) UAXMLNode* documentNode;
 
 - (id)initWithContentOfURL:(NSURL*)contentUrl;
 

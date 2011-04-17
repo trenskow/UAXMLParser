@@ -44,6 +44,7 @@
 
 - (void)dealloc {
     
+    [wrapperDocumentNode release];
     delete documentNode;
     [url release];
     [delegates release];
@@ -97,6 +98,15 @@
             [(id<UAXMLParserDelegate>)[delegates lastObject] parserDidEndParse:self];
         
     }
+    
+}
+
+- (UAXMLNode*)documentNode {
+    
+    if (!wrapperDocumentNode)
+        wrapperDocumentNode = [[UAXMLNode alloc] initWithNode:documentNode];
+    
+    return [[wrapperDocumentNode retain] autorelease];
     
 }
 
