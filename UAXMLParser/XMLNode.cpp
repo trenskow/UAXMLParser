@@ -157,7 +157,7 @@ XMLNodeList* XMLNode::ChildNodes() {
             while (tagstart[0] != '<' && tagstart - _buffer < _length)
                 tagstart = &tagstart[1];
             
-            if (tagstart[0] != '<')
+            if (tagstart[0] != '<' || tagstart >= &_buffer[_length])
                 break;
             
             clength = (signed long long)_length - (signed long long)(tagstart - _buffer);
