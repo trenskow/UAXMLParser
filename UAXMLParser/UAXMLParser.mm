@@ -29,8 +29,7 @@
             url = [contentUrl copy];
             documentNode = new xml::XMLNode();
             documentNode->ParseData((const char*)[data bytes], [data length]);
-            [data release];
-            
+            [data arcSafeRelease];
             delegates = [[NSMutableArray alloc] init];
             automaticallyPopsDelegatesOffStack = YES;
             
@@ -44,19 +43,22 @@
 
 - (void)dealloc {
     
-    [wrapperDocumentNode release];
     delete documentNode;
+#if !defined(_ARC_ENABLED)
+    [wrapperDocumentNode release];
     [url release];
     [delegates release];
     
     [super dealloc];
+#endif
+    
 }
 
 - (void)internalParseNode:(xml::XMLNode*)node {
     
     for (NSUInteger i = 0 ; i < node->ChildNodes()->Count() ; i++) {
         
-        UAXMLNode* oldCurrentNode = [currentNode retain];
+        UAXMLNode* oldCurrentNode = [currentNode arcSafeRetain];
         currentNode = [[UAXMLNode alloc] initWithNode:node->ChildNodes()->NodeAtIndex(i)];
         
         id<UAXMLParserDelegate> delegate = [delegates lastObject];
@@ -76,9 +78,9 @@
         if (delegate && [(id)delegate conformsToProtocol:@protocol(UAXMLParserDelegate)] && [(id)delegate respondsToSelector:@selector(parser:didEndNode:)])
             [delegate parser:self didEndNode:currentNode];
         
-        [currentNode autorelease];
+        [currentNode arcSafeAutorelease];
         currentNode = oldCurrentNode;
-        [oldCurrentNode release];
+        [currentNode arcSafeRelease];
         
     }
     
@@ -106,7 +108,7 @@
     if (!wrapperDocumentNode)
         wrapperDocumentNode = [[UAXMLNode alloc] initWithNode:documentNode];
     
-    return [[wrapperDocumentNode retain] autorelease];
+    return [[wrapperDocumentNode arcSafeRetain] arcSafeAutorelease];
     
 }
 

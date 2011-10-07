@@ -8,6 +8,7 @@
  
  */
 
+#import "UAARCSafeObject.h"
 #import <Foundation/Foundation.h>
 
 #ifdef __UAXMLPARSER_PRIVATE

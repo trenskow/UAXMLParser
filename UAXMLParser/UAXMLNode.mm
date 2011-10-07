@@ -29,14 +29,19 @@
 }
 
 - (void)dealloc {
+
+#if !defined(_ARC_ENABLED)
     [nodeName release];
     [attributesCache release];
+
     [super dealloc];
+#endif
+    
 }
 
 - (UAXMLNode*)parentNode {
     
-    return [[[[self class] alloc] initWithNode:node->ParentNode()] autorelease];
+    return [[[[self class] alloc] initWithNode:node->ParentNode()] arcSafeAutorelease];
     
 }
 
@@ -60,7 +65,7 @@
     NSMutableArray* ret = [NSMutableArray arrayWithCapacity:nodeList->Count()];
     
     for (NSUInteger i = 0 ; i < nodeList->Count() ; i++)
-        [ret addObject:[[[[self class] alloc] initWithNode:nodeList->NodeAtIndex(i)] autorelease]];
+        [ret addObject:[[[[self class] alloc] initWithNode:nodeList->NodeAtIndex(i)] arcSafeAutorelease]];
     
     return ret;
     
