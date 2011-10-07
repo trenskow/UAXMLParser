@@ -26,6 +26,8 @@
 		48A7DFC11355B18A002FDB7F /* XMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB71355B18A002FDB7F /* XMLNode.h */; };
 		48A7DFC21355B18A002FDB7F /* XMLNodeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48A7DFB81355B18A002FDB7F /* XMLNodeList.cpp */; };
 		48A7DFC31355B18A002FDB7F /* XMLNodeList.h in Headers */ = {isa = PBXBuildFile; fileRef = 48A7DFB91355B18A002FDB7F /* XMLNodeList.h */; };
+		A10D6F4D143F11B800B33875 /* UAARCSafeObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A10D6F4B143F11B800B33875 /* UAARCSafeObject.h */; };
+		A10D6F4E143F11B800B33875 /* UAARCSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D6F4C143F11B800B33875 /* UAARCSafeObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		48A7DFB91355B18A002FDB7F /* XMLNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLNodeList.h; sourceTree = "<group>"; };
 		48FCC1D9135997CC00F90366 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		48FCC1F31359B2C800F90366 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
+		A10D6F4B143F11B800B33875 /* UAARCSafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAARCSafeObject.h; sourceTree = "<group>"; };
+		A10D6F4C143F11B800B33875 /* UAARCSafeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAARCSafeObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		488A58101355AF3100D4C561 /* UAXMLParser */ = {
 			isa = PBXGroup;
 			children = (
+				A10D6F4B143F11B800B33875 /* UAARCSafeObject.h */,
+				A10D6F4C143F11B800B33875 /* UAARCSafeObject.m */,
 				48A7DFB01355B18A002FDB7F /* BoyerMoore.cpp */,
 				48A7DFB11355B18A002FDB7F /* BoyerMoore.h */,
 				48A7DFB21355B18A002FDB7F /* UAXMLNode.h */,
@@ -177,6 +183,7 @@
 				48A7DFBE1355B18A002FDB7F /* UAXMLParser.h in Headers */,
 				48A7DFC11355B18A002FDB7F /* XMLNode.h in Headers */,
 				48A7DFC31355B18A002FDB7F /* XMLNodeList.h in Headers */,
+				A10D6F4D143F11B800B33875 /* UAARCSafeObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +231,9 @@
 /* Begin PBXProject section */
 		488A58021355AF3100D4C561 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 488A58051355AF3100D4C561 /* Build configuration list for PBXProject "UAXMLParser" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -280,6 +290,7 @@
 				48A7DFBF1355B18A002FDB7F /* UAXMLParser.mm in Sources */,
 				48A7DFC01355B18A002FDB7F /* XMLNode.cpp in Sources */,
 				48A7DFC21355B18A002FDB7F /* XMLNodeList.cpp in Sources */,
+				A10D6F4E143F11B800B33875 /* UAARCSafeObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +360,7 @@
 				DSTROOT = /tmp/UAXMLParser.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UAXMLParser/UAXMLParser-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -361,6 +373,7 @@
 				DSTROOT = /tmp/UAXMLParser.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UAXMLParser/UAXMLParser-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -376,6 +389,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UAXMLParserTests/UAXMLParserTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "UAXMLParserTests/UAXMLParserTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -396,6 +410,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UAXMLParserTests/UAXMLParserTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "UAXMLParserTests/UAXMLParserTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
