@@ -22,6 +22,8 @@
 
 #include "XMLNode.h"
 
+char* mallocstrcpy(const char* src);
+
 using namespace xml;
 
 XMLNode::XMLNode() {
@@ -102,8 +104,12 @@ XMLNode::~XMLNode() {
 
 bool XMLNode::ValidateXML(const char* buffer, size_t length) {
 
-	if (length > 5)
-		return memcmp(buffer, "<?xml", 5) == 0;
+    size_t offset = 0;
+    while (length - offset > 0 && buffer[offset] != '<')
+        offset++;
+    
+	if (length - offset > 5)
+		return memcmp(&buffer[offset], "<?xml", 5) == 0;
 
 	return false;
 
@@ -111,12 +117,16 @@ bool XMLNode::ValidateXML(const char* buffer, size_t length) {
 
 void XMLNode::ParseData(const char* buffer, size_t length) {
 
-	assert(_parentNode == NULL && _buffer == NULL);
+	assert(_parentNode == NULL && _buffer == NULL && length > 0);
 	
-	_buffer = (char*) malloc(sizeof(char) * length);
-	memcpy(_buffer, buffer, length);
+    size_t offset = 0;
+    while (length - offset > 0 && buffer[offset] != '<')
+        offset++;
+    
+	_buffer = (char*) malloc(sizeof(char) * (length - offset));
+	memcpy(_buffer, &buffer[offset], length - offset);
 
-	_length = length;
+	_length = length - offset;
 
 }
 
@@ -146,7 +156,7 @@ XMLNodeList* XMLNode::ChildNodes() {
     
         _childNodes = new XMLNodeList();
         
-        if (_isEndNode(_buffer))
+        if (_isEndNode(_buffer) || _isCDataNode())
             return _childNodes;
                 
         char* tagstart = &_buffer[1];
@@ -415,12 +425,20 @@ const char* XMLNode::GetInnerValue() {
 	end = &end[-1];
 
 	size_t length = end - start;
+    
+    bool shouldDecode = true;
+    if (_isCDataNode()) {
+        start += 9;
+        length -= 12;
+        shouldDecode = false;
+    }
 
 	_innerValue = (char*)malloc(sizeof(char) * length + 1);
 	
 	memcpy(_innerValue, start, length);
 	_innerValue[length] = '\0';
-	_decode(_innerValue, length);
+    if (shouldDecode)
+        _decode(_innerValue, length);
 
 	return _innerValue;
 
@@ -455,6 +473,27 @@ int XMLNode::_hexToDec(const char* num) {
 
 	return ret;
 
+}
+
+bool XMLNode::_isCDataNode() {
+    
+	const char* start = (const char*) memchr(_buffer, '>', _length);
+	const char* end = &_buffer[_length];
+    
+	size_t cpos = _length;
+	while (end != &start[1] && _buffer[cpos] != '<')
+		end = &_buffer[cpos--];
+    
+	start = &start[1];
+	end = &end[-1];
+    
+	size_t length = end - start;
+
+    if (length > 9 && memcmp(start, "<![CDATA[", 9) == 0)
+        return true;
+    
+    return false;
+    
 }
 
 void XMLNode::_decode(char* buffer, size_t length) {
