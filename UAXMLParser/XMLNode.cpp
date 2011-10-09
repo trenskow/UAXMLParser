@@ -444,6 +444,27 @@ const char* XMLNode::GetInnerValue() {
 
 }
 
+bool XMLNode::_isCDataNode() {
+    
+	const char* start = (const char*) memchr(_buffer, '>', _length);
+	const char* end = &_buffer[_length];
+    
+	size_t cpos = _length;
+	while (end != &start[1] && _buffer[cpos] != '<')
+		end = &_buffer[cpos--];
+    
+	start = &start[1];
+	end = &end[-1];
+    
+	size_t length = end - start;
+    
+    if (length > 9 && memcmp(start, "<![CDATA[", 9) == 0)
+        return true;
+    
+    return false;
+    
+}
+
 int XMLNode::_hexToDec(const char* num) {
 
 	assert(num != NULL);
@@ -473,27 +494,6 @@ int XMLNode::_hexToDec(const char* num) {
 
 	return ret;
 
-}
-
-bool XMLNode::_isCDataNode() {
-    
-	const char* start = (const char*) memchr(_buffer, '>', _length);
-	const char* end = &_buffer[_length];
-    
-	size_t cpos = _length;
-	while (end != &start[1] && _buffer[cpos] != '<')
-		end = &_buffer[cpos--];
-    
-	start = &start[1];
-	end = &end[-1];
-    
-	size_t length = end - start;
-
-    if (length > 9 && memcmp(start, "<![CDATA[", 9) == 0)
-        return true;
-    
-    return false;
-    
 }
 
 void XMLNode::_decode(char* buffer, size_t length) {
@@ -528,6 +528,8 @@ void XMLNode::_decode(char* buffer, size_t length) {
 
 			} else if (0 == strcmp(code, "&amp;"))
 				buffer[x] = '&';
+            else if (0 == strcmp(code, "&apos;"))
+                buffer[x] = '\'';
 			else if (0 == strcmp(code, "&quot;"))
 				buffer[x] = '"';
 			else if (0 == strcmp(code, "&gt;"))

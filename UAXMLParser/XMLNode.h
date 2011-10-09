@@ -69,8 +69,8 @@ namespace xml {
 		} *_attributesCache;
 		size_t _attributesCacheCount;
 		
-		int _hexToDec(const char* num);
         bool _isCDataNode();
+		int _hexToDec(const char* num);
 		void _decode(char* buffer, size_t length);
 		bool _isEndNode(const char* nodestart);
 		void _addNodeListToCache(XMLNodeList* list, const char* name);
