@@ -18,15 +18,11 @@
 
 @synthesize currentNode, url, automaticallyPopsDelegatesOffStack;
 
-- (id)initWithContentOfURL:(NSURL *)contentUrl {
+- (id)initWithData:(NSData*)data {
     
     if ((self = [super init])) {
         
-        //Used for debugging purposes
-        //NSLog(@"%@", [contentUrl absoluteString]);
-        NSData* data = [[NSData alloc] initWithContentsOfURL:contentUrl];
         if (data && xml::XMLNode::ValidateXML((const char*)[data bytes], [data length])) {
-            url = [contentUrl copy];
             documentNode = new xml::XMLNode();
             documentNode->ParseData((const char*)[data bytes], [data length]);
             [data arcSafeRelease];
@@ -38,6 +34,16 @@
     }
     
     return self;
+    
+}
+
+- (id)initWithContentOfURL:(NSURL *)contentUrl {
+
+    if ((self = [self initWithData:[[NSData alloc] initWithContentsOfURL:contentUrl]]))
+        url = [contentUrl copy];
+    
+    return self;
+
     
 }
 

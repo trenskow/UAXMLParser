@@ -49,6 +49,7 @@
 @property (assign) BOOL automaticallyPopsDelegatesOffStack;
 @property (readonly) UAXMLNode* documentNode;
 
+- (id)initWithData:(NSData*)data;
 - (id)initWithContentOfURL:(NSURL*)contentUrl;
 
 - (void)parse;
