@@ -233,7 +233,8 @@ XMLNodeList* XMLNode::ChildNodes() {
                             cBeginSearchPos[bmBeginRet[0] + taglength + 1] == '/' ||
                             cBeginSearchPos[bmBeginRet[0] + taglength + 1] == '>') {
                             
-                            cBeginSearchPos = &cBeginSearchPos[bmBeginRet[0]];
+                            cBeginSearchPos = &cBeginSearchPos[bmBeginRet[0] + taglength + 1];
+                            cEndSearchPos = &cEndSearchPos[taglength + 1];
                             if (endTag->Search(cEndSearchPos, clength - (cEndSearchPos - tagstart), bmEndRet, 1, BM_NONEDSTEDRESULTS) > 0)
                                 cEndSearchPos = &cEndSearchPos[bmEndRet[0]];
                             else {
