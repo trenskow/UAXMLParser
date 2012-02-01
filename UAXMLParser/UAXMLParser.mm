@@ -25,7 +25,6 @@
         if (data && xml::XMLNode::ValidateXML((const char*)[data bytes], [data length])) {
             documentNode = new xml::XMLNode();
             documentNode->ParseData((const char*)[data bytes], [data length]);
-            [data arcSafeRelease];
             delegates = [[NSMutableArray alloc] init];
             automaticallyPopsDelegatesOffStack = YES;
             
@@ -39,7 +38,7 @@
 
 - (id)initWithContentOfURL:(NSURL *)contentUrl {
 
-    if ((self = [self initWithData:[[NSData alloc] initWithContentsOfURL:contentUrl]]))
+    if ((self = [self initWithData:[[[NSData alloc] initWithContentsOfURL:contentUrl] arcSafeAutorelease]]))
         url = [contentUrl copy];
     
     return self;
