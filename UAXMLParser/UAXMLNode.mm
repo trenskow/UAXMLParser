@@ -85,7 +85,10 @@
 
 - (NSString*)innerValue {
     
-    return [NSString stringWithCString:node->GetInnerValue() encoding:NSUTF8StringEncoding];
+    if (node->GetInnerValue())
+        return [NSString stringWithCString:node->GetInnerValue() encoding:NSUTF8StringEncoding];
+    
+    return nil;
     
 }
 
