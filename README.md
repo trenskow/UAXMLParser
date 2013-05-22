@@ -38,9 +38,9 @@ This receiver is the prime receiver of the delegate. It informs the top delegate
 
 This receiver informs the top delegate of the stack, that the parser has finished parsing a node. Any automatically popped delegates has been popped prior to this message.
 
-parserWillBeginParse: (optional)
+### parserWillBeginParse: (optional)
 
-- (BOOL)parserWillBeginParse:(UAXMLParser*)parser
+    - (BOOL)parserWillBeginParse:(UAXMLParser*)parser
 
 This receiver informs the top delegate of the stack, that parsing of an XML file is about to begin. The delegate then has the ability to abort the operation by returning NO. The delegate could retain the parser, in order to start parsing itself when the delegate is ready.
 
