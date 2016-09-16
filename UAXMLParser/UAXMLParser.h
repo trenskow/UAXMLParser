@@ -8,12 +8,18 @@
  
  */
 
-#import "UAARCSafeObject.h"
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#ifdef __UAXMLPARSER_PRIVATE
-#import "XMLNode.h"
-#endif
+//! Project version number for UAXMLParser.
+FOUNDATION_EXPORT double UAXMLParserVersionNumber;
+
+//! Project version string for UAXMLParser.
+FOUNDATION_EXPORT const unsigned char UAXMLParserVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <UAXMLParser/PublicHeader.h>
+
+
+#import <Foundation/Foundation.h>
 
 #include "UAXMLNode.h"
 
@@ -31,23 +37,11 @@
 @end
 
 @interface UAXMLParser : NSObject
-#ifdef __UAXMLPARSER_PRIVATE
-{
-    
-    UAXMLNode* wrapperDocumentNode;
-    xml::XMLNode* documentNode;
-    NSMutableArray* delegates;
-    UAXMLNode* currentNode;
-    NSURL* url;
-    BOOL ignoreChildNodes;
-    BOOL automaticallyPopsDelegatesOffStack;
-    
-}
-#endif
-@property (readonly) UAXMLNode* currentNode;
-@property (readonly) NSURL* url;
-@property (assign) BOOL automaticallyPopsDelegatesOffStack;
-@property (readonly) UAXMLNode* documentNode;
+
+@property (nonatomic,readonly) UAXMLNode* currentNode;
+@property (nonatomic,readonly) NSURL* url;
+@property (nonatomic) BOOL automaticallyPopsDelegatesOffStack;
+@property (nonatomic,readonly) UAXMLNode* documentNode;
 
 - (id)initWithData:(NSData*)data;
 - (id)initWithContentOfURL:(NSURL*)contentUrl;

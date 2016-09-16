@@ -8,36 +8,15 @@
  
  */
 
-#import "UAARCSafeObject.h"
 #import <Foundation/Foundation.h>
 
-#ifdef __UAXMLPARSER_PRIVATE
-#define __UAXMLNODE_PRIVATE
-#endif
-
-#ifdef __UAXMLNODE_PRIVATE
-#include "XMLNode.h"
-#endif
-
 @interface UAXMLNode : NSObject
-#ifdef __UAXMLNODE_PRIVATE
-{
-    
-    xml::XMLNode* node;
-    NSMutableDictionary* attributesCache;
-    NSString* nodeName;
-    
-}
 
-- (id)initWithNode:(xml::XMLNode*)theNode;
-
-#endif
-
-@property (readonly) UAXMLNode* parentNode;
-@property (readonly) BOOL isDocumentNode;
-@property (readonly) NSString* name;
-@property (readonly) NSArray* childNodes;
-@property (readonly) NSString* innerValue;
+@property (nonatomic,readonly,weak) UAXMLNode* parentNode;
+@property (nonatomic,readonly) BOOL isDocumentNode;
+@property (nonatomic,readonly) NSString* name;
+@property (nonatomic,readonly) NSArray* childNodes;
+@property (nonatomic,readonly) NSString* innerValue;
 
 - (NSArray*)nodesWithTagName:(NSString*)tagname;
 - (NSString*)valueOfAttributeWithName:(NSString*)attributeName;

@@ -8,55 +8,59 @@
  
  */
 
-#define __UAXMLNODE_PRIVATE
 #import "XMLNode.h"
-#import "UAXMLNode.h"
+#import "UAXMLNode+Internal.h"
+
+@interface UAXMLNode ()
+
+@property (nonatomic) xml::XMLNode* node;
+@property (nonatomic) NSMutableDictionary* attributesCache;
+@property (nonatomic,readwrite) NSString* name;
+@property (nonatomic,readwrite) NSArray* childNodes;
+@property (nonatomic,readwrite) NSString* innerValue;
+
+@end
 
 @implementation UAXMLNode
 
-- (id)initWithNode:(xml::XMLNode *)theNode {
+- (id)initWithNode:(xml::XMLNode *)node {
     
-    if (!theNode)
+    if (!node)
         return nil;
     
+    if (_node->GetCtx() != NULL) {
+        return (__bridge UAXMLNode *)_node->GetCtx();
+    }
+    
     if ((self = [super init])) {
-        node = theNode;
-        attributesCache = [[NSMutableDictionary alloc] init];
+        _node = node;
+        node->SetCtx((__bridge void *)self);
+        _attributesCache = [@{} mutableCopy];
     }
     
     return self;
     
 }
 
-- (void)dealloc {
-
-#if !defined(_ARC_ENABLED)
-    [nodeName release];
-    [attributesCache release];
-
-    [super dealloc];
-#endif
-    
-}
-
 - (UAXMLNode*)parentNode {
     
-    return [[[[self class] alloc] initWithNode:node->ParentNode()] arcSafeAutorelease];
+    return [[[self class] alloc] initWithNode:self.node->ParentNode()];
     
 }
 
 - (BOOL)isDocumentNode {
     
-    return node->IsDocumentNode();
+    return self.node->IsDocumentNode();
     
 }
 
 - (NSString*)name {
     
-    if (!nodeName)
-        nodeName = [[NSString alloc] initWithCString:node->GetName() encoding:NSUTF8StringEncoding];
+    if (!_name) {
+        _name = [[NSString alloc] initWithCString:self.node->GetName() encoding:NSUTF8StringEncoding];
+    }
     
-    return nodeName;
+    return _name;
     
 }
 
@@ -65,7 +69,7 @@
     NSMutableArray* ret = [NSMutableArray arrayWithCapacity:nodeList->Count()];
     
     for (NSUInteger i = 0 ; i < nodeList->Count() ; i++)
-        [ret addObject:[[[[self class] alloc] initWithNode:nodeList->NodeAtIndex(i)] arcSafeAutorelease]];
+        [ret addObject:[[[self class] alloc] initWithNode:nodeList->NodeAtIndex(i)]];
     
     return ret;
     
@@ -73,20 +77,20 @@
 
 - (NSArray*)childNodes {
     
-    return [self nodeListToArray:node->ChildNodes()];
+    return [self nodeListToArray:self.node->ChildNodes()];
     
 }
 
 - (NSArray*)nodesWithTagName:(NSString *)tagname {
 
-    return [self nodeListToArray:node->GetNodesWithTagName([tagname cStringUsingEncoding:NSUTF8StringEncoding])];
+    return [self nodeListToArray:self.node->GetNodesWithTagName([tagname cStringUsingEncoding:NSUTF8StringEncoding])];
     
 }
 
 - (NSString*)innerValue {
     
-    if (node->GetInnerValue())
-        return [NSString stringWithCString:node->GetInnerValue() encoding:NSUTF8StringEncoding];
+    if (self.node->GetInnerValue())
+        return [NSString stringWithCString:self.node->GetInnerValue() encoding:NSUTF8StringEncoding];
     
     return nil;
     
@@ -95,14 +99,14 @@
 - (NSString*)valueOfAttributeWithName:(NSString *)attributeName {
     
     NSString* ret = nil;
-    if ((ret = [attributesCache objectForKey:attributeName]))
+    if ((ret = [self.attributesCache objectForKey:attributeName]))
         return ret;
     
-    const char* attributeValue = node->GetAttributeValue([attributeName cStringUsingEncoding:NSUTF8StringEncoding]);
+    const char* attributeValue = self.node->GetAttributeValue([attributeName cStringUsingEncoding:NSUTF8StringEncoding]);
     
     if (attributeValue) {
         ret = [NSString stringWithCString:attributeValue encoding:NSUTF8StringEncoding];
-        [attributesCache setObject:ret forKey:attributeName];
+        [self.attributesCache setObject:ret forKey:attributeName];
     }
     
     return ret;
@@ -112,7 +116,7 @@
 - (BOOL)isEqual:(id)object {
     
     if ([object isKindOfClass:[UAXMLNode class]])
-        return (node == ((UAXMLNode*)object)->node);
+        return (self.node == ((UAXMLNode*)object).node);
     
     return [super isEqual:object];
     

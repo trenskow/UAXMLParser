@@ -42,6 +42,9 @@ namespace xml {
 		static bool ValidateXML(const char* buffer, size_t length);
 		
 		XMLNode& operator=(const XMLNode &rs);
+        
+        void SetCtx(void *ctx);
+        void* GetCtx();
 		
 	private:
 		
@@ -69,6 +72,8 @@ namespace xml {
 		} *_attributesCache;
 		size_t _attributesCacheCount;
 		
+        void *_ctx;
+        
         bool _isCDataNode();
 		int _hexToDec(const char* num);
 		void _decode(char* buffer, size_t length);

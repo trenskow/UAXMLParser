@@ -160,7 +160,7 @@ XMLNodeList* XMLNode::ChildNodes() {
             return _childNodes;
                 
         char* tagstart = &_buffer[1];
-        signed long long clength = (signed long long) _length - 1;
+        size_t clength = _length - 1;
         
         while (clength > 0) {
             
@@ -170,7 +170,7 @@ XMLNodeList* XMLNode::ChildNodes() {
             if (tagstart[0] != '<' || tagstart >= &_buffer[_length])
                 break;
             
-            clength = (signed long long)_length - (signed long long)(tagstart - _buffer);
+            clength = _length - (tagstart - _buffer);
             
             if (clength > 0 && tagstart[1] == '/') {
                 tagstart = (char*) memchr(tagstart, '>', clength);
@@ -189,7 +189,7 @@ XMLNodeList* XMLNode::ChildNodes() {
                 
             } else {
                 
-                int taglength = strlen(tagname);
+                size_t taglength = strlen(tagname);
                 
                 char startagname[taglength + 2];
                 char endtagname[taglength + 4];
@@ -474,7 +474,7 @@ int XMLNode::_hexToDec(const char* num) {
 	int cshift = 0;
 	size_t len = strlen(num);
 
-	for (int x = len - 1 ; x >= 0 ; x--) {
+	for (ssize_t x = len - 1 ; x >= 0 ; x--) {
 
 		char cChar = num[x];
 		int cNum = 0;
@@ -605,4 +605,12 @@ void XMLNode::_parseNodeName() {
                  
 	}
 	
+}
+
+void XMLNode::SetCtx(void *ctx) {
+    _ctx = ctx;
+}
+
+void* XMLNode::GetCtx() {
+    return _ctx;
 }
